@@ -1,0 +1,25 @@
+<div class="container">
+    <ng-container *ngIf="runners">
+      <div *ngFor="let runner of runners; let i = index" class="device-block">
+        <mat-card class="example-card">
+          <mat-card-title>Runner #{{i}}</mat-card-title>
+          <mat-card-content>
+                    <b>ControlRoom URL: </b>
+                    <div style="max-width: 100%;overflow: hidden;">{{runners[i].controlRoomURL}}</div>
+                    <b>Runner #:</b>
+                    {{runners[i].username}}
+          </mat-card-content>
+          <mat-divider inset></mat-divider>
+          <mat-card-actions>
+            <ng-container *ngFor="let rpa of rpas; let j = index" >
+                <button mat-raised-button color="primary" (click)="runBOT(rpa.BotID, runners[i])">{{rpa.BotName}}</button>
+            </ng-container>
+          </mat-card-actions>
+          <mat-card-footer>
+            <mat-progress-bar *ngIf="progress" mode="indeterminate"></mat-progress-bar>
+          </mat-card-footer>
+        </mat-card>
+      </div>
+    </ng-container>
+    
+</div>

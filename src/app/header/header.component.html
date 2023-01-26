@@ -1,0 +1,39 @@
+<mat-toolbar color="primary">
+    <span>AutomationDude by Gopinath Nelluri</span>
+    <div class="header-buttons">
+        <a href="./#/">
+        <button mat-raised-button>Dashboard</button>
+        </a>
+    </div>
+    <div class="header-buttons">
+        <a href="./#/runners">
+            <button mat-raised-button>Runners</button>
+        </a>
+    </div>
+    <div class="header-buttons">
+        <a href="./#/rpas">
+            <button mat-raised-button>RPAs</button>
+        </a>
+    </div>
+    <span class="spacer"></span>
+    <span></span>
+    <div class="header-buttons">
+        <a [href]="downloadUrl" download="export.json">
+            <button mat-raised-button color="warn">Export Config</button>
+        </a>
+    </div>
+    <div class="header-buttons">
+        <button mat-raised-button (click)="file.click()" color="warn">Import Config</button>
+    </div>
+    <!--
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+    </button>
+    -->
+    <div style="display:none;">
+        <input type="file" (change)="uploadFile($event)" accept="application/json" #file>
+    </div>
+</mat-toolbar>

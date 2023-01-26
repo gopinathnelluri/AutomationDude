@@ -1,0 +1,7 @@
+{
+    "/v1/*": {
+      "target": "https://community.cloud.automationanywhere.digital/v1",
+      "secure": false,
+      "changeOrigin": true
+    }
+  }
